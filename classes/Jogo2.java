@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
-public class Jogo1 {
+public class Jogo2 {
 
     static int menu() {
         int op = Integer.parseInt(
@@ -12,17 +12,29 @@ public class Jogo1 {
     }
 
     public static void main(String[] args) {
+        //o cacador é instanciado utilizando o construtor padrão
         Personagem cacador = new Personagem();
+        cacador.exibePersonagem();
+        //o scanner é instanciado utilizando um construtor que recebe um parâmetro
         Scanner scanner = new Scanner(System.in);
+        //o random é instanciado utilizando o construtor padrão
         Random random = new Random();
         System.out.println("Qual o nome do personagem?");
-        cacador.nome = scanner.nextLine();
-        cacador.sono = 0;
-        cacador.energia = random.nextInt(10);
-        cacador.fome = random.nextInt(5);
+        //////
+        String s = scanner.nextLine();
+        cacador.setNome(s);
+        //cacador.setNome(scanner.nextLine());
+        cacador.setSono(0);
+        ////////
+        int e = random.nextInt(10);
+        cacador.setEnergia(e);
+        //cacador.setEnergia(random.nextInt(10));
+        int f = random.nextInt(5);
+        cacador.setFome(f);
+        //cacador.setFome(random.nextInt(5));
         cacador.exibePersonagem();
         int opcao = menu();
-        while (opcao != 0 && cacador.estaVivo) {
+        while (opcao != 0 && cacador.getEstaVivo()) {
             if (opcao == 1) {
                 cacador.cacar();
                 cacador.exibePersonagem();
@@ -35,7 +47,7 @@ public class Jogo1 {
             } else {
                 System.out.println("personagem não sabe fazer isso");
             }
-            if (cacador.estaVivo) {
+            if (cacador.getEstaVivo()) {
                 opcao = menu();
             }
         }

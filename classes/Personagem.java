@@ -1,10 +1,50 @@
 public class Personagem {
-    String nome;
-    int fome;
-    int sono;
-    int energia;
-    boolean estaVivo = true;
-    void dormir () {
+    //os atributos devem ser encapsulados
+    private String nome;
+    private int fome;
+    private int sono;
+    private int energia;
+    private boolean estaVivo = true;
+    //construtor com parâmetros
+    public Personagem (String nome, int energia, int sono, int fome) {
+        this.nome = nome;
+        this.energia = energia;
+        this.fome = fome;
+        this.sono = sono;
+    }
+    //métodos de acesso
+    public String getNome() {
+        return nome;
+    }
+    public int getFome() {
+        return fome;
+    }
+    public int getSono() {
+        return sono;
+    }
+    public int getEnergia () {
+        return energia;
+    }
+    public boolean getEstaVivo() {
+        return estaVivo;
+    }
+    //métodos modificadores
+    public void setNome (String novoNome) {
+        nome = novoNome;
+    }
+    public void setFome (int novaFome) {
+        fome = novaFome;
+    }
+    public void setSono (int novoSono) {
+        sono = novoSono;
+    }
+    public void setEnergia (int novaEnergia) {
+        energia = novaEnergia;
+    }
+    public void setEstaVivo (boolean novoEstado) {
+        estaVivo = novoEstado;
+    }
+    public void dormir () {
         if (sono > 0) {
             sono--;
         }
@@ -15,7 +55,7 @@ public class Personagem {
             energia++;
         }
     }
-    void comer () {
+    public void comer () {
         if (fome > 0) {
             fome--;
         }
@@ -23,7 +63,7 @@ public class Personagem {
             energia++;
         }
     }
-    void cacar () {
+    public void cacar () {
         if (fome < 4) {
             fome++;
         }
@@ -37,7 +77,7 @@ public class Personagem {
             estaVivo = false;
         }
     }
-    void exibePersonagem() {
+    public void exibePersonagem() {
         System.out.println("Veja seu personagem:" + nome);
         System.out.println("sono = " + sono);
         System.out.println("fome = " + fome);

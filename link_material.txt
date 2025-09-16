@@ -1,1 +1,5 @@
-acesse a pasta https://www.rodrigobossini.com.br/ -> acessar material -> pasta java
+apostilas:
+https://www.rodrigobossini.com.br/ -> acessar material -> pasta java
+
+códigos
+https://github.com/amachion/2025_2_usjt_psc

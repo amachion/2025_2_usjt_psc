@@ -14,8 +14,8 @@ public class Estudante extends Pessoa {
     public void setCurso (String curso) {
         this.curso = curso;
     }
-    @Override
-    public String toString () {
-        return super.toString() + ", curso: " + curso;
-    }
+    // @Override
+    // public String toString () {
+    //     return super.toString() + ", curso: " + curso;
+    // }
 }

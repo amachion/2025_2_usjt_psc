@@ -1,4 +1,4 @@
-public class Pessoa {
+public class Pessoa{
     //encapsulamento
     private String nome;
     private int idade;
